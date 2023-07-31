@@ -64,6 +64,10 @@ public class DiaryService {
         // id는 그대로 두고 나머지 값만 달라졌을 때, save는 나머지 값들을 덮어쓰기(update)함
     }
 
+    public void deleteDiary(LocalDate date) {
+        diaryRepository.deleteAllByDate(date);
+    }
+
     private String getWeatherString() {
         String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=" + apiKey;
 
