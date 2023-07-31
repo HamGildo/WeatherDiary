@@ -11,4 +11,6 @@ import java.util.List;
 public interface DiaryRepository extends JpaRepository<Diary, Integer> {
     List<Diary> findAllByDate(LocalDate date);
     List<Diary> findAllByDateBetween(LocalDate startDate, LocalDate endDate);
+
+    Diary getFirstByDate(LocalDate date); // getFirst -> sql에서 limit 1의 역할을 함
 }
